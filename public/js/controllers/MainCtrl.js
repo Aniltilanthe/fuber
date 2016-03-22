@@ -159,12 +159,12 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
 				$scope.noCabsMsg = "";
 
         if ($scope.formData.cabType === 'Pink') {
-          $scope.costMsg = "Cost: Dist * 2 + 5";
-          $sceop.costMsg += (100 * currDist * 2 + 5) ;
+          $scope.costMsg = "Cost: Dist * 2 + 5 = ";
+          $scope.costMsg += (100 * currDist * 2 + 5) ;
           $scope.costMsg += ' dogecoin';
         } else {
           $scope.costMsg = "Cost: Dist * 2 =";
-          $sceop.costMsg += (100 * currDist * 2 );
+          $scope.costMsg += (100 * currDist * 2 );
           $scope.costMsg += ' dogecoin';
         }
 
