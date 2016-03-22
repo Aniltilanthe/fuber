@@ -1,0 +1,74 @@
+<div class="jumbotron text-center" data-ng-controller="MainController">
+	<h1>Book a cab at fuber</h1>
+
+	<p>{{ tagline }}</p>
+
+    <div class="row content">
+        <!-- Google Map -->
+
+		<div class="col-md-7">
+			<div id="googleMap5" style="width:600px;height:500px;"></div>
+        </div>
+
+        
+        <!-- Side Panel -->
+        <div class="col-md-5">
+            <div class="panel panel-default">
+                <!-- Panel Title -->
+                <div class="panel-heading">
+                    <h2 class="panel-title text-center">Book a Cab Simple <span class="glyphicon glyphicon-map-marker"></span></h2>
+                </div>
+                <!-- Panel Body -->
+                <div class="panel-body">
+                    <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+                    <form name ="addForm" novalidate>
+                        <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                        <div class="form-group">
+                            <label for="username">Username <span class="badge">All fields required</span></label>
+                            <input type="text" class="form-control" id="username" placeholder="Andy Hey" ng-model="formData.username" required>
+                        </div>
+                        <label class="radio control-label">Favourite Car Type</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="radiomale" value="Usual" ng-model="formData.cabType">
+                                Usual
+                            </label>
+                        </div>
+                        <div class="radio" required>
+                            <label>
+                                <input type="radio" name="optionsRadios" id="radiofemale" value="Pink" ng-model="formData.cabType">
+                                Pink
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude">From Latitude</label>
+                            <input type="number" class="form-control" id="latitude" placeholder="12.9922" ng-model="formData.fromLatitude">
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">From Longitude</label>
+                            <input type="number" class="form-control" id="longitude" placeholder="77.7159" ng-model="formData.fromLongitude">
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude">To Latitude</label>
+                            <input type="number" class="form-control" id="latitude" placeholder="12.9699" ng-model="formData.toLatitude">
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">To Longitude</label>
+                            <input type="number" class="form-control" id="longitude" placeholder="77.6599" ng-model="formData.toLongitude">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                            <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
+                        </div>
+                        <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                        <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+                    </form>
+					
+					<p>{{ noCabsMsg }}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>	
+</div>
