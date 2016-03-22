@@ -2,6 +2,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
 
 	$scope.tagline = 'Travel in Bangalore anywhere!';	
 	$scope.noCabsMsg = "";
+  $scope.costMsg = '';
 
 	$scope.user;
 
@@ -156,6 +157,17 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
 					 myloc[i].setPosition(me);
 				}
 				$scope.noCabsMsg = "";
+
+        if ($scope.formData.cabType === 'Pink') {
+          $scope.costMsg = "Cost: Dist * 2 + 5";
+          $sceop.costMsg += (100 * currDist * 2 + 5) ;
+          $scope.costMsg += ' dogecoin';
+        } else {
+          $scope.costMsg = "Cost: Dist * 2 =";
+          $sceop.costMsg += (100 * currDist * 2 );
+          $scope.costMsg += ' dogecoin';
+        }
+
     	}	
     	else {
     		$scope.noCabsMsg = "Sorry. No cabs Available";
